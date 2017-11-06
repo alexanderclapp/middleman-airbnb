@@ -1,0 +1,54 @@
+<!-- source/flats/show.html.erb -->
+
+<!-- Access data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<!-- Inject flat data in template -->
+
+<div class="small-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "https://kitt.lewagon.com/placeholder/cities/#{flat.city_slug}"%>');">
+</div>
+<div class="grid-container">
+  <div class="grid">
+    <div class="card-photo"><%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "avatar"%>
+    </div>
+    <div class="card-info">
+      <p><%= flat.name %></p>
+      <h2><%= flat.description %></h2>
+      <p><%= flat.city_name %></p>
+    </div>
+    <div class="form-wrapper">
+      <div class="card-form">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <form action="#">
+              <h3 class="text-center">Book this pad</h3>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="your-arrival">Your arrival</label>
+                    <input type="text" class="form-control" id="your-arrival" placeholder="21/10/2017">
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="your-departure">Your departure</label>
+                    <input type="text" class="form-control" id="your-departure" placeholder="21/11/2017">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="guests">How many guests?</label>
+                <select id="guests" class="form-control">
+                  <option value="">1 guest</option>
+                  <option value="">2 guests</option>
+                  <option value="">3 guests</option>
+                </select>
+              </div>
+              <input type="book" value="Book!" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
